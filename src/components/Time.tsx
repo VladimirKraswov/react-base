@@ -2,18 +2,18 @@ import React from 'react';
 
 interface TimeProps {
   time: string;
+  color: string;
 }
 
-const Time: React.FC<TimeProps> = ({ time }) => {
+const Time: React.FC<TimeProps> = ({ time, color }) => {
 
   return (
-    <h1 style={styles.container}>{time}</h1>
+    <h1 style={{...styles.container, color}}>{time}</h1>
   );
 };
 
 const styles: { [name: string]: React.CSSProperties }  = {
   container: {
-    color: '#FFD700',
     fontSize: 48,
   },
   time: {
