@@ -22,5 +22,8 @@
   },
   "include": [
     "src"
-  ]
+, "babel.config.js"  ],
+  "paths": {
+    "@components": ["./src/components"],
+  } 
 }
