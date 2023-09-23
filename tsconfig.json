@@ -1,24 +1,20 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
+    "target": "es5" /* Укажите целевую версию ECMAScript: «ES3» (по умолчанию), «ES5», «ES2015», «ES2016», «ES2017», «ES2018» или «ESNEXT». */,
+    "lib": [ "dom", "dom.iterable", "esnext" ] /* Укажите файлы библиотеки, которые будут включены в компиляцию. */,
+    "allowJs": true /* Разрешить компиляцию файлов JavaScript. */,
+    "skipLibCheck": true /* Пропустить проверку типов файлов объявлений. */,
+    "esModuleInterop": true /* Включает взаимодействие между модулями CommonJS и ES посредством создания объектов пространства имен для всех импортируемых данных. Подразумевает «allowSyntheticDefaultImports». */,
+    "allowSyntheticDefaultImports": true/* Разрешить импорт по умолчанию из модулей без экспорта по умолчанию. Это не влияет на вывод кода, а только на проверку типов. */,
+    "strict": true /* Включаем все параметры строгой проверки типов. */,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
-    "moduleResolution": "node",
+    "module": "esnext" /* Укажите генерацию кода модуля: «none», «commonjs», «amd», «system», «umd», «es2015» или «ESNext». */,
+    "moduleResolution": "node" /* Укажите стратегию разрешения модуля: "node" (Node.js) или «классический» (TypeScript до 1.6). */,
     "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx"
+    "isolatedModules": true /* Транспилируем каждый файл как отдельный модуль (аналогично «ts.transpileModule»). */,
+    "noEmit": true /* Не выдавать выходные данные. */,
+    "jsx": "react-jsx" /* Укажите генерацию кода JSX: «preserve», «react-native» или «react». */
   },
   "include": [
     "src"
