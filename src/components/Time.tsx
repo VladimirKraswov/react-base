@@ -7,6 +7,9 @@ interface TimeProps {
 
 const Time: React.FC<TimeProps> = ({ time, color }) => {
 
+  console.log('Render Time');
+  
+
   return (
     <h1 style={{...styles.container, color}}>{time}</h1>
   );
