@@ -24,7 +24,7 @@ function App() {
   return (
     <div style={styles.container}>
       <Time time={time} color={color}/>
-      <ImageSliderOld
+      <ImageSlider
         images={girlImageImports}
         onChangeColor={handleChangeColor}
       />
