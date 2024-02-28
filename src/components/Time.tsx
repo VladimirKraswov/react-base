@@ -20,9 +20,9 @@ const getStyles = (color: string) => ({
   container: {
     fontSize: 48,
     textShadow: `
-    0 0 7px #fff,
-    0 0 10px #fff,
-    0 0 21px #fff,
+    0 0 7px ${color},
+    0 0 10px ${color},
+    0 0 21px ${color},
     0 0 42px ${color},
     0 0 82px${color},
     0 0 92px ${color},
