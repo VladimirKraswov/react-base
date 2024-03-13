@@ -10,11 +10,7 @@ function ExpensiveTree() {
 	{ 
 		// Искусственная задержка в 100ms
 	}
-	React.useEffect(()=>{
-		return(()=>{
-			
-		})
-	})
+
 	return <p>I am a very slow component tree.</p>
 }
 
