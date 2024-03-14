@@ -1,33 +1,43 @@
-import React,  { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import dayjs from 'dayjs';
 
-import { performance } from 'perf_hooks';
-
-function ExpensiveTree() {
-	let now = performance.now();
-
-
-	while (performance.now() - now < 100)
-	{ 
-		// Искусственная задержка в 100ms
-	}
-
-	return <p>I am a very slow component tree.</p>
-}
+import { ImageSlider, ImageSliderOld, Time } from './components';
+import girlImageImports from './assets';
+import { generateRandomColor } from './utils/generateColor';
 
 
 function App() {
-  const [color, setColor] = useState('red');
+  const [time, setTime] = useState(dayjs().format('HH:mm:ss'));
+  const [color, setColor] = useState('#FFD700');
 
-	return ( 
-		<div>
-			<input
-				value={color}
-				onChange={(e) => setColor(e.target.value)}
-			/> 
-			<p style={{ color }}>Hello, world!</p>
-			<ExpensiveTree />
-		</div>
-	)
+  const handleChangeColor = () => {
+    const newColor = generateRandomColor();
+    setColor(newColor);
+  };
+
+  useEffect(() => {
+    setInterval(() => {
+      setTime(dayjs().format('HH:mm:ss'));
+    }, 1000)
+  }, [])
+
+  return (
+    <div style={styles.container}>
+      <Time time={time} color={color}/>
+      <ImageSliderOld
+        images={girlImageImports}
+        onChangeColor={handleChangeColor}
+      />
+    </div>
+  );
+}
+
+const styles: { [name: string]: React.CSSProperties }  = {
+  container: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
 }
 
 export default App;
