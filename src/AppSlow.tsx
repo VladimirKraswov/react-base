@@ -21,7 +21,7 @@ function HeavyComponent() {
 }
 
 
-function App() {
+function AppSlow() {
   const [color, setColor] = useState('red');
 
 	return ( 
@@ -36,4 +36,4 @@ function App() {
 	)
 }
 
-export default App;
+export default AppSlow;

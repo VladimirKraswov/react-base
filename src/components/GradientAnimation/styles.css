@@ -1,0 +1,28 @@
+.gradient-animation {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gradient-box {
+  width: 100vw;
+  height: 100vh;
+  border-radius: 10px;
+  background: linear-gradient(45deg, #ff00ff, #00ffff, #ffff00); /* Начальные цвета градиента */
+  background-size: 600% 600%; /* Размер градиента (больше, чем 100%, чтобы градиент был длиннее) */
+  animation: gradientAnimation 15s infinite; /* Применяем анимацию */
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%; /* Начальная позиция градиента */
+  }
+  50% {
+    background-position: 100% 50%; /* Конечная позиция градиента */
+  }
+  100% {
+    background-position: 0% 50%; /* Возвращаемся в начальную позицию */
+  }
+}
