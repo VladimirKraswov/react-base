@@ -1,14 +1,25 @@
-import React from 'react';
+import React, { Suspense } from 'react';
+
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import PageOne from './pages/PageOne';
 import PageTwo from './pages/PageTwo';
+import App from './App';
 
 
 function AppLazy() {
 
   return (
     <div style={styles.container}>
-      <PageTwo />
+    <Router>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Routes>
+          <Route path="/" element={<App />} />
+          <Route path="/page-one" element={<PageOne />} />
+          <Route path="/page-two" element={<PageTwo />} />
+        </Routes>
+      </Suspense>
+    </Router>
     </div>
   );
 }
