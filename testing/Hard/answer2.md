@@ -36,7 +36,7 @@ function missingNumber(nums) {
     if (nums[right] !== nums.length + 1) return nums.length + 1;
     
     while (left <= right) {
-        let mid = Math.floor((left + right) / 2);
+        const mid = Math.floor((left + right) / 2);
         
         // Если число в середине массива равно ожидаемому числу, продолжаем поиск справа
         if (nums[mid] === mid + 1) {
@@ -51,5 +51,27 @@ function missingNumber(nums) {
     // После завершения цикла right указывает на индекс пропущенного числа
     // Ожидаемое пропущенное число - nums[right] + 1
     return nums[right] + 1;
+}
+```
+
+# Решение 2 (Решение одного из студентов)
+
+```js
+function missingNumber(nums) {
+  let left = 0;
+  let right = nums.length - 1;
+
+  while(left < right) {
+    const midIndex = Math.floor((left + right) / 2)
+    const value = nums[midIndex- 1] ;
+
+    if (midIndex === value) {
+      left = midIndex + 1;
+    } else {
+      right = midIndex - 1;
+    }
+  }
+
+  return left
 }
 ```
