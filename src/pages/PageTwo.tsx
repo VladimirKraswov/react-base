@@ -4,7 +4,6 @@ import GradientAnimation from '../components/GradientAnimation';
 
 function PageTwo() {
 
-
   return (
     <div style={styles.container}>
        <GradientAnimation />
