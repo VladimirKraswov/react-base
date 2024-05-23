@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import ButtonImage from '../assets/button/button.png';
-import ButtonActiveImage from '../assets/button/button-active.png';
+import ButtonImage from '../../assets/button/button.png';
+import ButtonActiveImage from '../../assets/button/button-active.png';
 
 interface Props {
   isLeft?: boolean;
@@ -35,7 +35,6 @@ const styles: { [name: string]: React.CSSProperties }  = {
     width: 64,
     height: 64,
   }
-
 }
 
 export default Button;
