@@ -1,5 +1,12 @@
 import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
 import Button from './Button';
+
+import { setCurrentSlide } from '../store/sliderSlice';
+import { RootState } from '../store';
+
+
 
 interface ImageSliderProps {
   images: any[];
@@ -8,17 +15,16 @@ interface ImageSliderProps {
 
 const ImageSlider: React.FC<ImageSliderProps> = ({ images, onChangeColor }) => {
   console.log('Render: ImageSlider');
+  const dispatch = useDispatch();
   
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const currentIndex = useSelector((state: RootState) => state.slider.currentSlide);
 
   const handleNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    dispatch(setCurrentSlide((currentIndex + 1) % images.length));
   };
 
   const handlePrev = () => {
-    setCurrentIndex(
-      (prevIndex) => (prevIndex - 1 + images.length) % images.length
-    );
+    dispatch(setCurrentSlide((currentIndex - 1 + images.length) % images.length));
   };
 
   // const container = React.createElement('div', { style: styles.container },
