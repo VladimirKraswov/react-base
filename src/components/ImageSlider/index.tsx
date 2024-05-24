@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React  from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import Button from './Button';
+import Button from '../Button';
 
-import { setCurrentSlide } from '../store/sliderSlice';
-import { RootState } from '../store';
+import { setCurrentSlide } from '../../store/sliderSlice';
+import { RootState } from '../../store';
 
 
 
@@ -26,19 +26,6 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ images, onChangeColor }) => {
   const handlePrev = () => {
     dispatch(setCurrentSlide((currentIndex - 1 + images.length) % images.length));
   };
-
-  // const container = React.createElement('div', { style: styles.container },
-  //   React.createElement('img', { src: images[currentIndex], alt: 'Current img' }),
-  //   React.createElement('div', { style: styles.buttonContainer },
-  //     React.createElement(Button, { isLeft: true, onClick: handlePrev }),
-  //     React.createElement('button', { style: styles.rndColorBtn, onClick: onChangeColor },
-  //       React.createElement('h2', { style: styles.rndColorBtnText }, 'Random Color')
-  //     ),
-  //     React.createElement(Button, { onClick: handleNext })
-  //   )
-  // );
-
-  // return container
 
   return (
     <div style={styles.container}>
