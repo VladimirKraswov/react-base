@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import dayjs from 'dayjs';
 
-import { ImageSlider, ImageSliderOld, Time } from './components';
+import { ImageSlider, ImageSliderOld, Time, WebSlider } from './components';
 import girlImageImports from './assets';
 import { generateRandomColor } from './utils/generateColor';
 
@@ -24,10 +24,11 @@ function App() {
   return (
     <div style={styles.container}>
       <Time time={time} color={color}/>
-      <ImageSliderOld
+      {/* <ImageSlider
         images={girlImageImports}
         onChangeColor={handleChangeColor}
-      />
+      /> */}
+      <WebSlider />
     </div>
   );
 }

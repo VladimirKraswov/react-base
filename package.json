@@ -47,6 +47,7 @@
   },
   "devDependencies": {
     "@jedmao/redux-mock-store": "^3.0.5",
-    "@types/react-router-dom": "^5.3.3"
+    "@types/react-router-dom": "^5.3.3",
+    "jest-fetch-mock": "^3.0.3"
   }
 }
