@@ -1,0 +1,48 @@
+syntax  = "proto3";
+
+package auth;
+
+option go_package = "krasov.sso.v1;ssov1";
+
+// Сервис аутентификации кторый содержит методы вида:
+// rpc НазваниеМетода (НазваниеОписанияПринимаемыхДанных) returns (НазваниеОписанияВозвращаемыхДанных);
+service Auth {
+  rpc Register (RegisterRequest) returns (RegisterResponse); // Метод регистрации
+  rpc Login (LoginRequest) returns (LoginResponse); // Метод входа
+  rpc IsAdmin (IsAdminRequest) returns (IsAdminResponse); // Узнать является ли пользователь админом
+}
+
+// Описание принимаемых данных метода Register
+message RegisterRequest {
+  string email = 1;
+  string password = 2;
+}
+
+// Описание возвращаемых данных метода Register
+message RegisterResponse {
+  int64 user_id = 1;
+}
+
+// Описание принимаемых данных метода Login
+message LoginRequest {
+  string email = 1;
+  string password = 2;
+  int32 app_id = 3; // ID приложения(Сервиса) в которое человек логинится
+}
+
+// Описание возвращаемых данных метода Login
+message LoginResponse {
+  string token = 1;
+}
+
+// Описание принимаемых данных метода IsAdmin
+message IsAdminRequest {
+  int64 user_id = 1;
+}
+
+// Описание возвращаемых данных метода IsAdmin
+message IsAdminResponse {
+  bool is_admin = 1;
+}
+
+// Сгенерируйте по этому протофайлу файлы go, для этого воспользуйтесь утилитой protoc
